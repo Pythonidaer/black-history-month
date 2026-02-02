@@ -1,0 +1,26 @@
+{
+  "name": "bhm-day-01-fred-hampton",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node scripts/rewrite-meta-url.js",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "flowbite": "^4.0.1",
+    "flowbite-react": "^0.12.16",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.5.0",
+    "react-vertical-timeline-component": "^3.5.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.18",
+    "@vitejs/plugin-react": "^4.2.1",
+    "tailwindcss": "^4.1.18",
+    "vite": "^5.0.0"
+  }
+}

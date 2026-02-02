@@ -1,0 +1,20 @@
+[
+  {
+    "id": "day-01-fred-hampton",
+    "day": 1,
+    "name": "Fred Hampton",
+    "slug": "fred-hampton",
+    "tagline": "You can kill a revolutionary but you can't kill the revolution.",
+    "dates": "1948 – 1969",
+    "path": "../day-01-fred-hampton/"
+  },
+  {
+    "id": "day-02-martin-luther-king",
+    "day": 2,
+    "name": "Martin Luther King Jr.",
+    "slug": "martin-luther-king",
+    "tagline": "I have a dream.",
+    "dates": "1929 – 1968",
+    "path": "../day-02-martin-luther-king/"
+  }
+]

@@ -1,0 +1,149 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #0a0a0a;
+  --text: #f0f0f0;
+  --accent: #c9a227;
+  --muted: #666;
+  --card-bg: #1a1a1a;
+  --card-border: #2a2a2a;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.app {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin: 0 0 0.5rem;
+}
+
+.tagline {
+  color: var(--muted);
+  font-size: 1.125rem;
+  margin: 0;
+}
+
+.timeline-section,
+.cards-section {
+  margin-bottom: 3rem;
+}
+
+.timeline-section h2,
+.cards-section h2 {
+  font-size: 1.25rem;
+  margin: 0 0 1rem;
+  color: var(--accent);
+}
+
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+}
+
+.timeline__item a {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.timeline__item a:hover {
+  color: var(--accent);
+}
+
+.timeline__day {
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.figure-card {
+  display: block;
+  padding: 1.25rem;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s, transform 0.15s;
+}
+
+.figure-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.figure-card__day {
+  font-variant-numeric: tabular-nums;
+  font-size: 0.8rem;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.figure-card__name {
+  font-size: 1.25rem;
+  margin: 0 0 0.5rem;
+}
+
+.figure-card__tagline {
+  font-size: 0.95rem;
+  color: var(--accent);
+  margin: 0 0 0.25rem;
+}
+
+.figure-card__dates {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+.footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--card-border);
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.footer code {
+  background: var(--card-bg);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
