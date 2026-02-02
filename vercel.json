@@ -1,0 +1,6 @@
+{
+  "installCommand": "cd day-01-fred-hampton && npm install",
+  "buildCommand": "cd day-01-fred-hampton && npm run build",
+  "outputDirectory": "day-01-fred-hampton/dist",
+  "framework": "vite"
+}
