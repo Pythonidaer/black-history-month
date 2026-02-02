@@ -15,7 +15,8 @@ html {
   --text: #f0f0f0;
   --accent: #c9a227;
   --accent-yellow: #f4c430;
-  --muted: #888;
+  --link-color: #ffd54f;
+  --muted: #aaa;
   --pad-h: 4%;
   --pad-v: 16%;
   --hero-pad-h: 10%;
@@ -428,12 +429,13 @@ cite {
 }
 
 .bio-section .content-link {
-  color: var(--accent-yellow);
-  text-decoration: none;
+  color: var(--link-color);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
 
 .bio-section .content-link:hover {
-  text-decoration: underline;
+  color: var(--accent-yellow);
 }
 
 .links li {
@@ -633,12 +635,13 @@ cite {
 }
 
 .site-footer__credit-link {
-  color: var(--accent-yellow);
-  text-decoration: none;
+  color: var(--link-color);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
 
 .site-footer__credit-link:hover {
-  text-decoration: underline;
+  color: var(--accent-yellow);
 }
 
 /* Scroll to top button — square, light grey, dark arrow */
