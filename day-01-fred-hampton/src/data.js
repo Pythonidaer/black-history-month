@@ -69,7 +69,10 @@ export const figure = {
   rainbowCoalition: {
     id: 'rainbow-coalition',
     title: 'The Rainbow Coalition',
-    content: 'The Rainbow Coalition brought together the Black Panther Party, the Young Lords, and the Young Patriots—organizations rooted in different communities but united around shared goals. Under Hampton\'s leadership, the coalition framed the struggle as multiracial and anti-racist, grounded in solidarity across class lines, and focused on collective liberation. This approach continues to resonate with modern movements working toward shared freedom and dignity.',
+    content: [
+      'The Rainbow Coalition brought together the Black Panther Party, the Young Lords, and the Young Patriots—organizations rooted in different communities but united around shared goals. Under Hampton\'s leadership, the coalition framed the struggle as multiracial and anti-racist, grounded in solidarity across class lines, and focused on collective liberation.',
+      'This approach continues to resonate with modern movements working toward shared freedom and dignity.'
+    ],
     cards: [
       { title: 'Solidarity over race', body: 'Black, Brown, and White working-class communities fighting inequality together.' },
       { title: 'Class consciousness', body: 'Poverty and exploitation as shared enemies, not race.' },
@@ -107,7 +110,10 @@ export const figure = {
   legacy: {
     id: 'legacy',
     title: 'Legacy',
-    content: 'Fred Hampton Day is observed in Chicago. The Fred Hampton mural in East Garfield Park, along with monuments, streets, and other landmarks, bear his name. His influence appears in modern movements for justice and community care. Films like Judas and the Black Messiah have brought his story to new audiences. Fred Hampton\'s assassination remains one of the clearest examples of how the U.S. government responded to organized peace and multiracial solidarity. He was targeted, surveilled, and ultimately killed by law enforcement while advocating community programs and political unity. The fact that such work was answered with lethal force continues to shape how movements for justice are policed and perceived today.',
+    content: [
+      'Fred Hampton Day is observed in Chicago. The Fred Hampton mural in East Garfield Park, along with monuments, streets, and other landmarks, bear his name. His influence appears in modern movements for justice and community care. Films like Judas and the Black Messiah have brought his story to new audiences.',
+      'Fred Hampton\'s assassination remains one of the clearest examples of how the U.S. government responded to organized peace and multiracial solidarity. He was targeted, surveilled, and ultimately killed by law enforcement while advocating community programs and political unity. The fact that such work was answered with lethal force continues to shape how movements for justice are policed and perceived today.'
+    ],
     links: [
       { phrase: 'Fred Hampton mural', url: 'https://mappedchicago.org/projects/fred-hampton-mural' },
       { phrase: 'Judas and the Black Messiah', url: 'https://news.wttw.com/2021/05/09/fred-hampton-jr-akua-njeri-judas-and-black-messiah' }

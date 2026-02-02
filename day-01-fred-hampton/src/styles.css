@@ -283,7 +283,10 @@ body {
 }
 
 .bio-section p {
-  margin: 0;
+  margin: 0 0 1.25rem;
+}
+.bio-section p:last-of-type {
+  margin-bottom: 0;
 }
 
 /* Video section — responsive 16:9 YouTube embed */

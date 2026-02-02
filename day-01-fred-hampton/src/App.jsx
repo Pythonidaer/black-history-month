@@ -195,7 +195,9 @@ export default function App() {
         {rainbow && (
           <section id={rainbow.id} className="bio-section rainbow-section">
             <h2>{rainbow.title}</h2>
-            <p>{rainbow.content}</p>
+            {Array.isArray(rainbow.content)
+              ? rainbow.content.map((para, i) => <p key={i}>{para}</p>)
+              : <p>{rainbow.content}</p>}
             {rainbow.cards?.length > 0 && (
               <div className="rainbow-cards">
                 {rainbow.cards.map((card, i) => (
@@ -245,7 +247,11 @@ export default function App() {
         {legacy && (
           <section id={legacy.id} className="bio-section">
             <h2>{legacy.title}</h2>
-            <p>{legacy.links?.length ? contentWithLegacyLinks(legacy.content, legacy.links) : legacy.content}</p>
+            {Array.isArray(legacy.content)
+              ? legacy.content.map((para, i) => (
+                  <p key={i}>{legacy.links?.length ? contentWithLegacyLinks(para, legacy.links) : para}</p>
+                ))
+              : <p>{legacy.links?.length ? contentWithLegacyLinks(legacy.content, legacy.links) : legacy.content}</p>}
           </section>
         )}
 

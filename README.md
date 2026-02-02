@@ -2,6 +2,13 @@
 
 One site per day for Black History Month. Built with **Vite** and **React**.
 
+## Live websites
+
+- **Day 1 — Fred Hampton:** [black-history-month-phi.vercel.app](https://black-history-month-phi.vercel.app/)
+- Day 2 — *coming soon*
+- Day 3 — *coming soon*
+- …
+
 ## Structure
 
 - **`template/`** — Copy this folder to create each new day (e.g. `day-03-figure-name/`). Replace `src/data.js` with the figure’s content.
