@@ -1,5 +1,7 @@
 # Day 03 — Nina Simone
 
+**Live site:** [black-history-month-zjty.vercel.app](https://black-history-month-zjty.vercel.app/)
+
 Placeholder site. Add your content in `src/data.js` and design in `src/styles.css` tomorrow.
 
 ## Deploy to Vercel

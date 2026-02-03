@@ -1,11 +1,484 @@
-/* Blank canvas — design tomorrow */
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap');
 
-*,
+.article-section {
+  max-width: 780px;
+  margin: -70px auto 2.5rem;
+  padding: 40px 50px 0;
+  backdrop-filter: blur(6px);
+  background: white;
+  color: #1a1a1a;
+}
+
+.article-section__eyebrow {
+  margin: 0 0 0.75rem;
+  letter-spacing: 0.22em;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: rgba(26, 26, 26, 0.65);
+}
+
+.article-section__headline {
+  margin: 0 0 1rem;
+  font-family: 'Courier Prime', monospace;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.article-section__quote {
+  margin: 0 0 1.25rem;
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.6;
+  color: rgba(26, 26, 26, 0.75);
+}
+
+.article-section__body {
+  margin: 0 0 2rem;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+*, 
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}
+
 body {
   margin: 0;
+  font-family: 'Courier Prime', monospace;
+  background: white;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+/* Hero banner */
+.hero-banner {
+  position: relative;
+  min-height: 420px;
+  background-image: url(/murderers_row1.png);
+  background-repeat: repeat;
+  background-position: center;
+  background-attachment: fixed;
+  width: 100vw;
+  margin: 0 calc(50% - 50vw) 2rem;
+  padding-bottom: 2rem;
+}
+
+.hero-banner__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(61, 11, 19, 0.75) 100%),
+    rgba(0, 0, 0, 0.95);
+}
+
+.hero-banner__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: inherit;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+/* Match hero-banner background so clipped text reveals the same image */
+.hero-banner__title {
+  margin: 0;
+  font-family: 'Courier Prime', monospace;
+  font-size: clamp(2.5rem, 12vw, 6rem);
+  line-height: 1.1;
+  letter-spacing: 0.35rem;
+  text-transform: uppercase;
+  background-image: url(/murderers_row1.png);
+  background-attachment: fixed;
+  background-repeat: repeat;
+  background-position: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  background-blend-mode: screen;
+  filter: brightness(1.2) contrast(1.1);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+
+
+/* Main content */
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Demo section — hover card (perspective here so 3D tilt works; modal stays unaffected) */
+.demo-section {
+  margin-top: 2rem;
+  width: 100%;
+  perspective: 1500px;
+}
+
+.demo-section__card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+  align-items: start;
+}
+
+/* Mobile: hide desktop grid, show stacked card+bio flow */
+.mobile-boxer-stack {
+  display: none;
+}
+
+/* 3D hover card — baseball card style (Eddie Booker) */
+.card {
+  width: 260px;
+  height: 364px;
+  position: relative;
+  border-radius: 12px;
+  padding: 0;
+  background: #181a1a;
+  box-shadow:
+    0 1px 5px #00000099,
+    inset 0 0 0 8px #181a1a;
+  transition-duration: 300ms;
+  transition-property: transform, box-shadow;
+  transition-timing-function: ease-out;
+  transform: rotate3d(0, 0, 0, 0deg);
+  overflow: hidden;
+}
+
+.card:hover {
+  transition-duration: 150ms;
+  box-shadow: 0 5px 20px 5px #00000044;
+}
+
+.card__image {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background: #e8e4dc center / cover no-repeat;
+  pointer-events: none;
+}
+
+.card__name-banner {
+  position: absolute;
+  top: 1rem;
+  left: 0;
+  padding: 0.4rem 1.75rem 0.4rem 1.25rem;
+  background: #c41e3a;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transform: skewY(-4deg);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.card__row-banner {
+  position: absolute;
+  bottom: 1rem;
+  right: 0;
+  padding: 0.4rem 1.25rem 0.4rem 1.75rem;
+  background: #1a1a1a;
+  color: #e8e4dc;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transform: skewY(-4deg);
+  box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.card .card__glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: inherit;
+  background-image: radial-gradient(circle at 50% -20%, #ffffff22, #0000000f);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Dark border drawn on top so it frames the red banner too */
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  border: 8px solid #181a1a;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.card[role="button"] {
+  cursor: pointer;
+}
+
+/* Detail view: card larger on left, text on right */
+.card--detail {
+  width: 340px;
+  height: 476px;
+}
+
+/* Modal: overlay full-screen; box centered with ~1 inch margin, transitions */
+.card-detail-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  min-width: 100vw;
+  min-height: 100vh;
+  min-height: 100dvh;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  overflow: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease-out, visibility 0.25s ease-out;
+}
+
+.card-detail-overlay--visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.card-detail-overlay__box {
+  position: relative;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  max-width: 1100px;
+  width: 100%;
+  padding: 2rem;
+  padding-top: 3rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  transform: scale(0.98);
+  opacity: 0;
+  transition: transform 0.25s ease-out, opacity 0.25s ease-out;
+}
+
+.card-detail-overlay--visible .card-detail-overlay__box {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.card-detail-overlay__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem;
+  border: none;
+  background: transparent;
+  color: #111;
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+
+.card-detail-overlay__close:hover {
+  color: #333;
+}
+
+.card-detail-overlay__inner {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  max-height: min(85vh, 520px); /* fit in viewport so overlay doesn’t scroll */
+  width: 100%;
+  overflow: auto;
+}
+
+.card-detail-overlay__card {
+  flex-shrink: 0;
+}
+
+.card-detail-overlay__content {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.9rem;
+  color: #000;
+}
+
+.card-detail-overlay__name {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.35rem, 3.5vw, 2rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.card-detail-overlay__facts {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.2rem 1rem;
+  margin: 0 0 0.75rem;
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+.card-detail-overlay__facts dt {
+  margin: 0;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.card-detail-overlay__facts dd {
+  margin: 0;
+  color: #000;
+}
+
+.card-detail-overlay__bio {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #000;
+}
+
+.card-detail-overlay__bio p {
+  margin: 0 0 0.75rem;
+}
+
+.card-detail-overlay__bio p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .demo-section--desktop {
+    display: none;
+  }
+
+  .mobile-boxer-stack {
+    display: block;
+    margin-top: 2rem;
+    padding: 0 1rem 2rem;
+  }
+
+  .boxer-block {
+    margin-bottom: 3rem;
+  }
+
+  .boxer-block:last-child {
+    margin-bottom: 0;
+  }
+
+  .boxer-block__card-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .boxer-block__card-wrap .card {
+    width: 260px;
+    height: 364px;
+  }
+
+  .boxer-block__content {
+    max-width: 100%;
+    padding: 0 0.5rem;
+  }
+
+  .boxer-block__content .card-detail-overlay__name {
+    margin-bottom: 0.75rem;
+    font-size: 1.5rem;
+  }
+
+  .boxer-block__content .card-detail-overlay__facts {
+    margin-bottom: 1rem;
+  }
+
+  .boxer-block__content .card-detail-overlay__bio p {
+    margin-bottom: 1rem;
+  }
+
+  .card-detail-overlay__inner {
+    flex-direction: column;
+  }
+  .card--detail {
+    width: 280px;
+    height: 392px;
+  }
+}
+
+/* Site footer — full width, same structure as day-01, red accent links */
+.site-footer {
+  width: 100%;
+  margin-top: 3rem;
+  padding: 2rem 1.5rem 4rem;
+  background: #1a1a1a;
+  color: #fff;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.site-footer__social {
+  margin-bottom: 1rem;
+}
+
+.site-footer__social-link {
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+
+.site-footer__social-link:hover {
+  color: #c41e3a;
+}
+
+.site-footer__design-credit {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 560px;
+  margin: 0 auto 1rem;
+  line-height: 1.5;
+}
+
+.site-footer__credit {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.site-footer__credit-link {
+  color: #c41e3a;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  transition: color 0.2s;
+}
+
+.site-footer__credit-link:hover {
+  color: #e63950;
 }

@@ -2,11 +2,11 @@
 
 One site per day for Black History Month. Built with **Vite** and **React**.
 
-## Live websites
+## Table of Contents
 
-- **Day 1 — Fred Hampton:** [black-history-month-phi.vercel.app](https://black-history-month-phi.vercel.app/)
-- **Day 2 — Murderers Row:** [murderers-row.vercel.app](https://murderers-row.vercel.app/)
-- **Day 3 — Nina Simone:** *Add Vercel URL after deploying*
+- [Fred Hampton](https://black-history-month-phi.vercel.app/)
+- [Murderers Row](https://murderers-row.vercel.app/)
+- [Nina Simone](https://black-history-month-zjty.vercel.app/)
 - …
 
 ## Structure
