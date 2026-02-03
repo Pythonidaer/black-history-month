@@ -104,18 +104,3 @@ cite {
 .links li {
   margin-bottom: 0.5rem;
 }
-
-.footer {
-  margin-top: 3rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid #333;
-}
-
-.footer a {
-  color: var(--muted);
-  text-decoration: none;
-}
-
-.footer a:hover {
-  color: var(--accent);
-}

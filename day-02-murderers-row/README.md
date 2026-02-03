@@ -1,6 +1,8 @@
 # Day 02 — Murderers Row
 
-Placeholder site. Add your content in `src/data.js` tomorrow.
+**Live site:** [murderers-row.vercel.app](https://murderers-row.vercel.app/)
+
+Placeholder site. Add your content in `src/data.js` and design in `src/styles.css` tomorrow.
 
 ## Deploy to Vercel
 

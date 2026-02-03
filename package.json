@@ -7,8 +7,10 @@
     "dev:main": "cd site-main && npm run dev",
     "dev:day1": "cd day-01-fred-hampton && npm run dev",
     "dev:day2": "cd day-02-murderers-row && npm run dev",
+    "dev:day3": "cd day-03-nina-simone && npm run dev",
     "build:main": "cd site-main && npm run build",
     "build:day1": "cd day-01-fred-hampton && npm run build",
-    "build:day2": "cd day-02-murderers-row && npm run build"
+    "build:day2": "cd day-02-murderers-row && npm run build",
+    "build:day3": "cd day-03-nina-simone && npm run build"
   }
 }

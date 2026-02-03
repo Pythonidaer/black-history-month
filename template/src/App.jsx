@@ -54,10 +54,6 @@ export default function App() {
           </ul>
         </section>
       )}
-
-      <footer className="footer">
-        <a href="/">← Back to Black History Month</a>
-      </footer>
     </main>
   )
 }

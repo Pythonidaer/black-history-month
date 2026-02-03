@@ -16,5 +16,14 @@
     "tagline": "Placeholder — fill in tomorrow",
     "dates": "TBD",
     "path": "../day-02-murderers-row/"
+  },
+  {
+    "id": "day-03-nina-simone",
+    "day": 3,
+    "name": "Nina Simone",
+    "slug": "nina-simone",
+    "tagline": "Placeholder — fill in tomorrow",
+    "dates": "1933 – 2003",
+    "path": "../day-03-nina-simone/"
   }
 ]

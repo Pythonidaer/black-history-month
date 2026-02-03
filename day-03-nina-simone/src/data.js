@@ -1,9 +1,9 @@
-// Day 2 — Murderers Row — Add your content here
+// Day 3 — Nina Simone — Add your content here
 export const figure = {
-  name: 'Murderers Row',
-  dates: 'TBD',
+  name: 'Nina Simone',
+  dates: '1933 – 2003',
   tagline: 'Placeholder — fill in tomorrow',
-bio: 'Test',
+  bio: 'Add your content about Nina Simone here. Pianist, singer, and civil rights activist known for "Mississippi Goddam," "To Be Young, Gifted and Black," and her powerful voice for justice.',
   imageUrl: '',
   quotes: [
     { text: 'Add a quote here.', source: 'Source' },
