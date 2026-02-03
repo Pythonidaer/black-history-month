@@ -5,7 +5,7 @@ One site per day for Black History Month. Built with **Vite** and **React**.
 ## Live websites
 
 - **Day 1 — Fred Hampton:** [black-history-month-phi.vercel.app](https://black-history-month-phi.vercel.app/)
-- Day 2 — *coming soon*
+- **Day 2 — Murderers Row:** *Add Vercel URL after deploying*
 - Day 3 — *coming soon*
 - …
 
@@ -13,7 +13,18 @@ One site per day for Black History Month. Built with **Vite** and **React**.
 
 - **`template/`** — Copy this folder to create each new day (e.g. `day-03-figure-name/`). Replace `src/data.js` with the figure’s content.
 - **`site-main/`** — Hub site: timeline and cards linking to each day. Add new entries to `src/data/figures.json` when you add a day.
-- **`day-01-fred-hampton/`**, **`day-02-martin-luther-king/`**, … — One Vite + React app per day; each is self-contained.
+- **`day-01-fred-hampton/`**, **`day-02-murderers-row/`**, … — One Vite + React app per day; each is self-contained.
+
+## Deploy a new day to Vercel
+
+Each day is a **separate Vercel project** from the same repo:
+
+1. **Add New Project** → Import your `black-history-month` GitHub repo.
+2. **Root Directory:** Set to `day-NN-folder-name` (e.g. `day-02-murderers-row`). Type the path if it’s not in the list.
+3. **Framework:** Vite (auto-detected).
+4. Deploy.
+
+Day 01 uses the repo root and a root `vercel.json` (because Root Directory couldn’t be changed). Days 02+ use their folder as Root Directory.
 
 ## Run a site
 
@@ -26,8 +37,8 @@ cd site-main && npm install && npm run dev
 # Day 1 — Fred Hampton
 cd day-01-fred-hampton && npm install && npm run dev
 
-# Day 2 — Martin Luther King Jr.
-cd day-02-martin-luther-king && npm install && npm run dev
+# Day 2 — Murderers Row
+cd day-02-murderers-row && npm install && npm run dev
 ```
 
 Or from inside any of those folders: `npm install` then `npm run dev`.

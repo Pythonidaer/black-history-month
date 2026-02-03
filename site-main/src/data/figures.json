@@ -9,12 +9,12 @@
     "path": "../day-01-fred-hampton/"
   },
   {
-    "id": "day-02-martin-luther-king",
+    "id": "day-02-murderers-row",
     "day": 2,
-    "name": "Martin Luther King Jr.",
-    "slug": "martin-luther-king",
-    "tagline": "I have a dream.",
-    "dates": "1929 – 1968",
-    "path": "../day-02-martin-luther-king/"
+    "name": "Murderers Row",
+    "slug": "murderers-row",
+    "tagline": "Placeholder — fill in tomorrow",
+    "dates": "TBD",
+    "path": "../day-02-murderers-row/"
   }
 ]
