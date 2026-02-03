@@ -1,18 +1,6 @@
 // Black Murderers' Row — boxer data
 export const BOXERS = [
   {
-    id: 'eddie-booker',
-    image: '/eddie_booker.jpg',
-    name: 'Eddie Booker',
-    imagePosition: 'center',
-    born: 'November 5, 1917',
-    from: 'Alto, Texas, USA',
-    died: 'January 26, 1975 (aged 57)',
-    divisions: 'Welterweight, Middleweight, Light-Heavyweight',
-    record: '66–5–8 (33 KOs)',
-    bio: 'Nicknamed "Black Dynamite," Eddie Booker combined elite boxing skill with devastating power. He was so formidable that Archie Moore—one of the greatest fighters in history—called Booker one of the two toughest opponents he ever faced.\n\nBooker became the first man to knock Moore out and was never stopped himself across 80 professional bouts. Yet, like the rest of Murderers\' Row, he was systematically avoided by titleholders.\n\nBooker later suffered permanent eye damage after competing with altered gloves and lived the remainder of his life blind, passing away in 1975 at the age of 57.'
-  },
-  {
     id: 'charley-burley',
     image: '/charley_burley.webp',
     name: 'Charley Burley',
@@ -23,6 +11,18 @@ export const BOXERS = [
     divisions: 'Welterweight, Middleweight, Light-Heavyweight',
     record: '83–12–2 (50 KOs)',
     bio: 'Widely regarded as the most feared and accomplished member of Black Murderers\' Row, Charley Burley is often cited as the greatest boxer never to receive a world title shot.\n\nDespite defeating elite champions such as Fritzie Zivic, Billy Soose, and Archie Moore, Burley was repeatedly bypassed by reigning titleholders, including Sugar Ray Robinson, Jake LaMotta, Billy Conn, and Rocky Graziano.\n\nThe son of a Black coal miner and a white Irish immigrant, Burley held the World Colored Welterweight and Middleweight Championships but was denied access to the fully recognized titles of his era.\n\nHe was inducted into the International Boxing Hall of Fame in 1992.'
+  },
+  {
+    id: 'eddie-booker',
+    image: '/eddie_booker.jpg',
+    name: 'Eddie Booker',
+    imagePosition: 'center',
+    born: 'November 5, 1917',
+    from: 'Alto, Texas, USA',
+    died: 'January 26, 1975 (aged 57)',
+    divisions: 'Welterweight, Middleweight, Light-Heavyweight',
+    record: '66–5–8 (33 KOs)',
+    bio: 'Nicknamed "Black Dynamite," Eddie Booker combined elite boxing skill with devastating power. He was so formidable that Archie Moore—one of the greatest fighters in history—called Booker one of the two toughest opponents he ever faced.\n\nBooker became the first man to knock Moore out and was never stopped himself across 80 professional bouts. Yet, like the rest of Murderers\' Row, he was systematically avoided by titleholders.\n\nBooker later suffered permanent eye damage caused from an opponent\'s altered gloves and lived the remainder of his life blind, passing away in 1975 at the age of 57.'
   },
   {
     id: 'bert-lytell',
