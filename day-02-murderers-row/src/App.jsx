@@ -93,23 +93,30 @@ function HoverCard({ image, name, rowLabel = "Murderer's Row", imagePosition = '
   )
 }
 
-function BoxerBioContent({ boxer, titleId, className = '' }) {
+const DECORATOR_IMAGE = '/decorator_boxing_gloves.webp'
+
+function BoxerBioContent({ boxer, titleId, className = '', compactFacts = true, showDecorator = false }) {
   if (!boxer) return null
   return (
     <div className={className}>
       <h2 id={titleId} className="card-detail-overlay__name">{boxer.name}</h2>
       {(boxer.born || boxer.from || boxer.died || boxer.divisions || boxer.record) && (
         <dl className="card-detail-overlay__facts">
-          {(boxer.born || boxer.died) && (
+          {compactFacts && (boxer.born || boxer.died) && (
             <>
               <dt>Lived</dt>
               <dd>{[boxer.born, boxer.died].filter(Boolean).join(' – ')}</dd>
             </>
           )}
+          {!compactFacts && boxer.born && (<><dt>Born</dt><dd>{boxer.born}</dd></>)}
+          {!compactFacts && boxer.died && (<><dt>Died</dt><dd>{boxer.died}</dd></>)}
           {boxer.from && (<><dt>From</dt><dd>{boxer.from}</dd></>)}
           {boxer.divisions && (<><dt>Divisions</dt><dd>{boxer.divisions}</dd></>)}
           {boxer.record && (<><dt>Record</dt><dd>{boxer.record}</dd></>)}
         </dl>
+      )}
+      {showDecorator && (
+        <img src={DECORATOR_IMAGE} alt="" className="boxer-bio-decorator" aria-hidden="true" />
       )}
       {(boxer.bio ?? '').trim() && (
         <div className="card-detail-overlay__bio">
@@ -123,10 +130,26 @@ function BoxerBioContent({ boxer, titleId, className = '' }) {
 }
 
 const MODAL_TRANSITION_MS = 250
+const TABLET_MEDIA = '(min-width: 769px) and (max-width: 1024px)'
+
+function useTabletViewport() {
+  const [isTablet, setIsTablet] = useState(() =>
+    typeof window !== 'undefined' && window.matchMedia(TABLET_MEDIA).matches
+  )
+  useEffect(() => {
+    const mql = window.matchMedia(TABLET_MEDIA)
+    const handler = () => setIsTablet(mql.matches)
+    mql.addEventListener('change', handler)
+    handler()
+    return () => mql.removeEventListener('change', handler)
+  }, [])
+  return isTablet
+}
 
 export default function App() {
   const [selectedCard, setSelectedCard] = useState(null)
   const [modalVisible, setModalVisible] = useState(false)
+  const isTabletViewport = useTabletViewport()
   const isOpen = selectedCard !== null
   const triggerRef = useRef(null)
   const closeButtonRef = useRef(null)
@@ -228,7 +251,7 @@ export default function App() {
                   noHover
                 />
               </div>
-              <BoxerBioContent boxer={boxer} className="boxer-block__content" />
+              <BoxerBioContent boxer={boxer} className="boxer-block__content" compactFacts={false} showDecorator />
             </article>
           ))}
         </section>
@@ -301,7 +324,7 @@ export default function App() {
                   noHover
                 />
               </div>
-              <BoxerBioContent boxer={selectedCard} titleId="card-detail-title" className="card-detail-overlay__content" />
+              <BoxerBioContent boxer={selectedCard} titleId="card-detail-title" className="card-detail-overlay__content" compactFacts={!isTabletViewport} />
             </div>
           </div>
         </div>

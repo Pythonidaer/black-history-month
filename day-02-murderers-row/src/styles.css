@@ -136,6 +136,52 @@ body.no-scroll {
   align-items: start;
 }
 
+/* Tablet / iPad portrait: 2 cards per row, tighter layout; smaller modal card so text doesn't scroll */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .article-section {
+    margin: -90px auto 2.5rem;
+  }
+
+  .demo-section {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .demo-section__card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 1rem;
+    row-gap: 4rem;
+  }
+
+  .card-detail-overlay__inner {
+    gap: 2rem;
+    max-height: min(90vh, 560px);
+  }
+
+  .card-detail-overlay__card .card--detail {
+    width: 260px;
+    height: 364px;
+  }
+
+  .card-detail-overlay__content {
+    font-size: 0.8rem;
+  }
+
+  .card-detail-overlay__content .card-detail-overlay__name {
+    font-size: clamp(1.15rem, 3vw, 1.5rem);
+  }
+
+  .card-detail-overlay__content .card-detail-overlay__facts {
+    font-size: 0.72rem;
+  }
+
+  .card-detail-overlay__content .card-detail-overlay__bio {
+    font-size: 0.85em;
+    line-height: 1.5;
+  }
+}
+
 /* Mobile: hide desktop grid, show stacked card+bio flow */
 .mobile-boxer-stack {
   display: none;
@@ -380,7 +426,7 @@ body.no-scroll {
   .mobile-boxer-stack {
     display: block;
     margin-top: 2rem;
-    padding: 0 1rem 2rem;
+    padding: 0 1.5rem 2rem;
   }
 
   .boxer-block {
@@ -392,19 +438,18 @@ body.no-scroll {
   }
 
   .boxer-block__card-wrap {
-    display: flex;
-    justify-content: center;
+    width: 100%;
     margin-bottom: 1.5rem;
   }
 
   .boxer-block__card-wrap .card {
-    width: 260px;
+    width: 100%;
     height: 364px;
   }
 
   .boxer-block__content {
     max-width: 100%;
-    padding: 0 0.5rem;
+    padding: 0;
   }
 
   .boxer-block__content .card-detail-overlay__name {
@@ -416,8 +461,18 @@ body.no-scroll {
     margin-bottom: 1rem;
   }
 
+  .boxer-bio-decorator {
+    display: block;
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    margin: 1rem auto 1.25rem;
+    object-fit: contain;
+  }
+
   .boxer-block__content .card-detail-overlay__bio p {
     margin-bottom: 1rem;
+    line-height: 28px;
   }
 
   .card-detail-overlay__inner {
