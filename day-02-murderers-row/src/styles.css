@@ -65,7 +65,7 @@ body.no-scroll {
 .hero-banner {
   position: relative;
   min-height: 420px;
-  background-image: url(/murderers_row1.png);
+  background-image: url(/murderers_row.png);
   background-repeat: repeat;
   background-position: center;
   background-attachment: fixed;
@@ -101,7 +101,7 @@ body.no-scroll {
   line-height: 1.1;
   letter-spacing: 0.35rem;
   text-transform: uppercase;
-  background-image: url(/murderers_row1.png);
+  background-image: url(/murderers_row.png);
   background-attachment: fixed;
   background-repeat: repeat;
   background-position: center;
@@ -440,11 +440,16 @@ body.no-scroll {
   .boxer-block__card-wrap {
     width: 100%;
     margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
   }
 
+  /* Preserve card aspect ratio (260:364) so image doesn’t stretch at 520–768px */
   .boxer-block__card-wrap .card {
     width: 100%;
-    height: 364px;
+    max-width: 320px;
+    height: auto;
+    aspect-ratio: 260 / 364;
   }
 
   .boxer-block__content {
@@ -489,7 +494,7 @@ body.no-scroll {
   width: 100%;
   margin-top: 3rem;
   padding: 2rem 1.5rem 4rem;
-  background: #1a1a1a;
+  background: #000;
   color: #fff;
   text-align: center;
   box-sizing: border-box;
@@ -508,7 +513,7 @@ body.no-scroll {
 }
 
 .site-footer__social-link:hover {
-  color: #c41e3a;
+  color: #F97B7B;
 }
 
 .site-footer__design-credit {

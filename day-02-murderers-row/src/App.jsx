@@ -3,7 +3,7 @@ import { FaXmark } from 'react-icons/fa6'
 import { FaLinkedin } from 'react-icons/fa'
 import { BOXERS } from './data'
 
-function HoverCard({ image, name, rowLabel = "Murderer's Row", imagePosition = 'center', noHover = false, onClick, id }) {
+function HoverCard({ image, name, rowLabel = "Murderers' Row", imagePosition = 'center', noHover = false, onClick, id }) {
   const cardRef = useRef(null)
   const glowRef = useRef(null)
   const boundsRef = useRef(null)
@@ -207,7 +207,7 @@ export default function App() {
           <div className="hero-banner__overlay" />
           <div className="hero-banner__content">
             <h1 className="hero-banner__title">
-              BLACK<br />MURDERERS<br />ROW
+              BLACK<br />MURDERERS&apos;<br />ROW
             </h1>
           </div>
         </section>
