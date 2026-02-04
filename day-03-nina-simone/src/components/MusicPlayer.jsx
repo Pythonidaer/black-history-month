@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
+import { FaPlay, FaPause, FaStepBackward, FaStepForward } from 'react-icons/fa'
 
 /**
  * Parses the song name from an audio filename, e.g.:
@@ -170,7 +171,7 @@ export default function MusicPlayer({ tracks = defaultTracks }) {
           aria-label="Previous track"
           onClick={handlePrev}
         >
-          ‹‹
+          <FaStepBackward size={20} />
         </button>
         <button
           type="button"
@@ -178,7 +179,7 @@ export default function MusicPlayer({ tracks = defaultTracks }) {
           aria-label={isPlaying ? 'Pause' : 'Play'}
           onClick={handlePlayPause}
         >
-          {isPlaying ? '‖' : '▶'}
+          {isPlaying ? <FaPause size={22} /> : <FaPlay size={22} />}
         </button>
         <button
           type="button"
@@ -186,7 +187,7 @@ export default function MusicPlayer({ tracks = defaultTracks }) {
           aria-label="Next track"
           onClick={handleNext}
         >
-          ››
+          <FaStepForward size={20} />
         </button>
       </div>
     </div>
