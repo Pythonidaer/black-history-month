@@ -9,8 +9,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tsparticles/plugin-emitters": "^3.9.1",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.9.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-scroll-parallax": "^3.5.0",
+    "react-tsparticles": "^2.12.2"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.2.1",
