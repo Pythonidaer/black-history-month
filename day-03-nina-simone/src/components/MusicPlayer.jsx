@@ -135,19 +135,49 @@ export default function MusicPlayer({ tracks = defaultTracks }) {
     <div className="music-player">
       <audio ref={audioRef} src={src} preload="metadata" />
 
-      <div className="music-player__art-wrap">
-        {albumArtUrl ? (
-          <img
-            src={albumArtUrl}
-            alt=""
-            className="music-player__art"
-          />
-        ) : (
-          <div className="music-player__art music-player__art--placeholder" />
-        )}
+      <div className="music-player__row">
+        <div className="music-player__art-wrap">
+          {albumArtUrl ? (
+            <img
+              src={albumArtUrl}
+              alt=""
+              className="music-player__art"
+            />
+          ) : (
+            <div className="music-player__art music-player__art--placeholder" />
+          )}
+        </div>
+        <div className="music-player__info">
+          <h2 className="music-player__title">{artist}</h2>
+          <p className="music-player__playlist">{songName}</p>
+        </div>
+        <div className="music-player__controls">
+          <button
+            type="button"
+            className="music-player__btn music-player__btn--prev"
+            aria-label="Previous track"
+            onClick={handlePrev}
+          >
+            <FaStepBackward size={18} />
+          </button>
+          <button
+            type="button"
+            className="music-player__btn music-player__btn--play"
+            aria-label={isPlaying ? 'Pause' : 'Play'}
+            onClick={handlePlayPause}
+          >
+            {isPlaying ? <FaPause size={20} /> : <FaPlay size={20} />}
+          </button>
+          <button
+            type="button"
+            className="music-player__btn music-player__btn--next"
+            aria-label="Next track"
+            onClick={handleNext}
+          >
+            <FaStepForward size={18} />
+          </button>
+        </div>
       </div>
-      <h2 className="music-player__title">{artist}</h2>
-      <p className="music-player__playlist">{songName}</p>
 
       <div
         className="music-player__progress-wrap"
@@ -162,33 +192,6 @@ export default function MusicPlayer({ tracks = defaultTracks }) {
           className="music-player__progress-fill"
           style={{ width: `${progressPercent}%` }}
         />
-      </div>
-
-      <div className="music-player__controls">
-        <button
-          type="button"
-          className="music-player__btn music-player__btn--prev"
-          aria-label="Previous track"
-          onClick={handlePrev}
-        >
-          <FaStepBackward size={20} />
-        </button>
-        <button
-          type="button"
-          className="music-player__btn music-player__btn--play"
-          aria-label={isPlaying ? 'Pause' : 'Play'}
-          onClick={handlePlayPause}
-        >
-          {isPlaying ? <FaPause size={22} /> : <FaPlay size={22} />}
-        </button>
-        <button
-          type="button"
-          className="music-player__btn music-player__btn--next"
-          aria-label="Next track"
-          onClick={handleNext}
-        >
-          <FaStepForward size={20} />
-        </button>
       </div>
     </div>
   )
