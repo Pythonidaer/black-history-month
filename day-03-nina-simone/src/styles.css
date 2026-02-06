@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-snap-type: y mandatory;
+}
+
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
@@ -119,15 +123,11 @@ body.cinema-countdown-active {
   opacity: 1;
 }
 
-.main-content--visible .section--intro__title {
+.section--intro--in-view .section--intro__hero-img {
   animation: intro-fade-in 1.2s ease-out 0.5s forwards;
 }
 
-.main-content--visible .section--intro__hero-img {
-  animation: intro-fade-in 1.2s ease-out 0.5s forwards;
-}
-
-.main-content--visible .section--intro__mic-img {
+.section--intro--in-view .section--intro__mic-img {
   animation: intro-slide-in 1.2s ease-out 1.5s forwards;
 }
 
@@ -136,19 +136,167 @@ body.cinema-countdown-active {
   width: 100%;
   min-height: 100vh;
   min-height: 100dvh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .section--white {
   background: #fff;
 }
 
-/* Section 1: blank hero (countdown leads here) */
+/* Section 1: hero video with cinematic letterbox reveal */
 .section--one {
   position: relative;
   height: 100vh;
   height: 100dvh;
   min-height: 0;
   overflow: hidden;
+  background: #000;
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+}
+
+.hero-video__letterbox {
+  width: 100%;
+  /* Slightly shorter for more bar length (cinematic) */
+  height: 35vw;
+  overflow: hidden;
+  position: relative;
+  transition: none;
+}
+
+.main-content--visible .hero-video__letterbox {
+  height: 100vh;
+  height: 100dvh;
+  transition: height 5s ease-out;
+}
+
+.hero-video__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-video__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  pointer-events: none;
+}
+
+.hero-video__content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding: clamp(2rem, 5vw, 4rem);
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.6s ease-out 2s;
+}
+
+.main-content--visible .hero-video__content {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* One block on the right; same width so title, subtitle, buttons share one left edge */
+.hero-video__content > * {
+  width: 42%;
+  max-width: 42%;
+  min-width: 0;
+  text-align: left;
+  margin-left: auto;
+}
+
+.hero-video__title {
+  margin: 0 0 0.75rem;
+  font-family: 'Madimi One', sans-serif;
+  font-size: clamp(10rem, 8vw, 20rem);
+  font-weight: 400;
+  line-height: .9;
+  letter-spacing: 0;
+  text-align: left;
+  background: linear-gradient(135deg, #c4a86a 0%, #a88b52 35%, #d4c4a0 70%, #9a7b42 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.4);
+  paint-order: stroke fill;
+}
+
+.hero-video__title-line {
+  display: block;
+}
+
+.hero-video__subtitle {
+  margin: 0 0 1.75rem;
+  font-size: clamp(0.9rem, 1.4vw, 1.05rem);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.5;
+}
+
+.hero-video__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.hero-video__btn {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: opacity 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.hero-video__btn:hover {
+  opacity: 0.9;
+}
+
+.hero-video__btn--outline {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.hero-video__btn--primary {
+  background: #8b2020;
+  color: #fff;
+  border: 2px solid #8b2020;
+}
+
+.hero-video__btn--primary:hover {
+  background: #a02828;
+}
+
+@media (max-width: 640px) {
+  .hero-video__content > * {
+    max-width: 85%;
+  }
 }
 
 /* Section 3: intro (title + hero image + mic) */
@@ -158,25 +306,6 @@ body.cinema-countdown-active {
   height: 100dvh;
   min-height: 0;
   overflow: hidden;
-}
-
-.section--intro__header {
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 2;
-  padding: 1.5rem 2rem;
-  pointer-events: none;
-}
-
-.section--intro__title {
-  margin: 0;
-  font-family: 'Madimi One', sans-serif;
-  font-size: clamp(10rem, 13vw, 20rem);
-  font-weight: 400;
-  color: #1a0f1c;
-  text-align: right;
-  opacity: 0;
 }
 
 .section--intro__hero-img {
@@ -227,11 +356,11 @@ body.cinema-countdown-active {
   background: linear-gradient(180deg, #3d2b3e 0%, #2d1b2e 50%, #1a0f1c 100%);
 }
 
-/* ----- Section 5–8: palette image ----- */
+/* ----- Section 3–6: palette image ----- */
+.section--three,
+.section--four,
 .section--five,
-.section--six,
-.section--seven,
-.section--eight {
+.section--six {
   position: relative;
   display: flex;
   align-items: center;
@@ -239,20 +368,20 @@ body.cinema-countdown-active {
   overflow: hidden;
 }
 
+.section--three__gradient-overlay,
+.section--four__gradient-overlay,
 .section--five__gradient-overlay,
-.section--six__gradient-overlay,
-.section--seven__gradient-overlay,
-.section--eight__gradient-overlay {
+.section--six__gradient-overlay {
   position: absolute;
   inset: 0;
   z-index: 0;
   transition: opacity 0.8s ease-out;
 }
 
+.section--three__content,
+.section--four__content,
 .section--five__content,
-.section--six__content,
-.section--seven__content,
-.section--eight__content {
+.section--six__content {
   position: relative;
   z-index: 1;
   display: flex;
@@ -262,20 +391,20 @@ body.cinema-countdown-active {
   width: 100%;
 }
 
+.section--three__img-wrap,
+.section--four__img-wrap,
 .section--five__img-wrap,
-.section--six__img-wrap,
-.section--seven__img-wrap,
-.section--eight__img-wrap {
+.section--six__img-wrap {
   border: 8px solid #fff;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
 }
 
+.section--three__img,
+.section--four__img,
 .section--five__img,
-.section--six__img,
-.section--seven__img,
-.section--eight__img {
+.section--six__img {
   display: block;
   max-width: min(85vw, 560px);
   max-height: 85vh;
@@ -284,8 +413,8 @@ body.cinema-countdown-active {
   object-fit: contain;
 }
 
-/* ----- Section 8: image left, text box right (fades in) ----- */
-.section--eight .section--eight__content {
+/* ----- Section 6: image left, text box right (fades in) ----- */
+.section--six .section--six__content {
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -295,16 +424,16 @@ body.cinema-countdown-active {
   margin: 0 auto;
 }
 
-.section--eight .section--eight__img-wrap {
+.section--six .section--six__img-wrap {
   flex-shrink: 0;
 }
 
-.section--eight .section--eight__img {
+.section--six .section--six__img {
   max-width: min(45vw, 420px);
   max-height: 80vh;
 }
 
-.section--eight__text-box {
+.section--six__text-box {
   background: #fff;
   color: #1a0f1c;
   padding: clamp(1.5rem, 3vw, 2.5rem);
@@ -316,12 +445,12 @@ body.cinema-countdown-active {
   transition: opacity 0.7s ease-out, transform 0.7s ease-out;
 }
 
-.section--eight__text-box--visible {
+.section--six__text-box--visible {
   opacity: 1;
   transform: translateX(0);
 }
 
-.section--eight__text-box-title {
+.section--six__text-box-title {
   margin: 0 0 0.75rem;
   font-family: 'Madimi One', sans-serif;
   font-size: clamp(1.75rem, 4vw, 2.25rem);
@@ -329,31 +458,31 @@ body.cinema-countdown-active {
   line-height: 1.2;
 }
 
-.section--eight__text-box-body {
+.section--six__text-box-body {
   margin: 0;
   font-size: clamp(0.95rem, 1.5vw, 1.05rem);
   line-height: 1.6;
 }
 
 @media (max-width: 720px) {
-  .section--eight .section--eight__content {
+  .section--six .section--six__content {
     flex-direction: column;
   }
 
-  .section--eight .section--eight__img {
+  .section--six .section--six__img {
     max-width: min(85vw, 360px);
   }
 }
 
-/* ----- Section 9: grass background, Nina fades in ----- */
-.section--nine {
+/* ----- Section 7: grass background, Nina fades in ----- */
+.section--seven {
   position: relative;
   min-height: 100vh;
   min-height: 100dvh;
   overflow: hidden;
 }
 
-.section--nine__bg {
+.section--seven__bg {
   position: absolute;
   inset: 0;
   z-index: 0;
@@ -363,7 +492,7 @@ body.cinema-countdown-active {
   background-repeat: no-repeat;
 }
 
-.section--nine__nina {
+.section--seven__nina {
   position: absolute;
   left: 50%;
   bottom: 0;
@@ -374,12 +503,12 @@ body.cinema-countdown-active {
   pointer-events: none;
 }
 
-.section--nine__nina--visible {
+.section--seven__nina--visible {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
 }
 
-.section--nine__nina-img {
+.section--seven__nina-img {
   display: block;
   /* Pair height to section (same as grass background rendered height); 800px viewport ≈ 800px Nina */
   height: 100vh;
@@ -538,6 +667,8 @@ body.cinema-countdown-active {
   color: #fff;
   text-align: center;
   box-sizing: border-box;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .site-footer__social {

@@ -56,34 +56,34 @@ export default function SectionEight() {
   return (
     <section
       ref={sectionRef}
-      className="section section--eight"
-      aria-label="Section 8"
+      className="section section--six"
+      aria-label="Section 6"
       style={{ background: FALLBACK_GRADIENT }}
     >
       <div
-        className="section--eight__gradient-overlay"
+        className="section--six__gradient-overlay"
         style={{
           background: gradient,
           opacity: gradientReady ? 1 : 0,
         }}
         aria-hidden
       />
-      <div className="section--eight__content">
-        <div className="section--eight__img-wrap">
+      <div className="section--six__content">
+        <div className="section--six__img-wrap">
           <img
             ref={imgRef}
             src={IMAGE_SRC}
             alt="Nina Simone performing"
-            className="section--eight__img"
+            className="section--six__img"
             onLoad={handleImageLoad}
           />
         </div>
         <div
           ref={textBoxRef}
-          className={`section--eight__text-box ${textVisible ? 'section--eight__text-box--visible' : ''}`}
+          className={`section--six__text-box ${textVisible ? 'section--six__text-box--visible' : ''}`}
         >
-          <h2 className="section--eight__text-box-title">Nina Simone</h2>
-          <p className="section--eight__text-box-body">
+          <h2 className="section--six__text-box-title">Nina Simone</h2>
+          <p className="section--six__text-box-body">
             Placeholder text. Your writeup about Nina Simone will go here. You can replace this paragraph with biographical details, her impact on music and civil rights, or any narrative you choose.
           </p>
         </div>

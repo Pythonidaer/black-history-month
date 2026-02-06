@@ -32,17 +32,17 @@ export default function SectionNine() {
   return (
     <section
       ref={sectionRef}
-      className="section section--nine"
-      aria-label="Section 9"
+      className="section section--seven"
+      aria-label="Section 7"
     >
-      <div className="section--nine__bg" aria-hidden />
+      <div className="section--seven__bg" aria-hidden />
       <div
-        className={`section--nine__nina ${showNina ? 'section--nine__nina--visible' : ''}`}
+        className={`section--seven__nina ${showNina ? 'section--seven__nina--visible' : ''}`}
       >
         <img
           src="/nina_no_grass.PNG"
           alt="Nina Simone"
-          className="section--nine__nina-img"
+          className="section--seven__nina-img"
         />
       </div>
     </section>

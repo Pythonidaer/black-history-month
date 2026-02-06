@@ -15,8 +15,9 @@ function buildGradientFromPalette(palette) {
 export default function SectionFive({
   imageSrc = '/nina_facing_blue_full.JPG',
   alt = 'Nina Simone',
-  sectionLabel = 'Section 5',
-  blockClass = 'section--five',
+  sectionLabel = 'Section 3',
+  blockClass = 'section--three',
+  id,
 }) {
   const [gradient, setGradient] = useState(FALLBACK_GRADIENT)
   const [gradientReady, setGradientReady] = useState(false)
@@ -38,6 +39,7 @@ export default function SectionFive({
 
   return (
     <section
+      id={id}
       className={`section ${blockClass}`}
       aria-label={sectionLabel}
       style={{ background: FALLBACK_GRADIENT }}

@@ -11,8 +11,10 @@ const SCROLL_LOCK_CLASS = 'cinema-countdown-active'
 
 export default function App() {
   const section1Ref = useRef(null)
+  const section2Ref = useRef(null)
   const [countdownDone, setCountdownDone] = useState(false)
   const [showMusicPlayer, setShowMusicPlayer] = useState(false)
+  const [introImagesVisible, setIntroImagesVisible] = useState(false)
   const handleCountdownComplete = useCallback(() => setCountdownDone(true), [])
 
   // Start at top on load/refresh
@@ -34,7 +36,7 @@ export default function App() {
     document.body.classList.remove(SCROLL_LOCK_CLASS)
   }, [countdownDone])
 
-  // Show music player only when scrolled past section 1 (section 2 and down)
+  // Show music player when scrolled past the hero (section 1) — visible on every section except the hero
   useEffect(() => {
     if (!countdownDone || !figure.tracks?.length) return
     const el = section1Ref.current
@@ -51,6 +53,22 @@ export default function App() {
     return () => observer.disconnect()
   }, [countdownDone])
 
+  // Section 2 intro images: fade in when section 2 enters viewport
+  useEffect(() => {
+    const el = section2Ref.current
+    if (!el) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries
+        if (entry.isIntersecting) setIntroImagesVisible(true)
+      },
+      { threshold: 0.15, rootMargin: '0px' }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <main className="app">
       <CinemaCountdown onComplete={handleCountdownComplete} />
@@ -64,14 +82,47 @@ export default function App() {
         )}
         <section
           ref={section1Ref}
-          className="section section--white section--one"
+          className="section section--one"
           aria-label="Section 1"
-        />
-        <section className="section section--gradient" aria-label="Section 2" />
-        <section className="section section--white section--intro" aria-label="Section 3">
-          <header className="section--intro__header">
-            <h1 className="section--intro__title">{figure.name}</h1>
-          </header>
+        >
+          <div className="hero-video">
+            <div className="hero-video__letterbox">
+              <video
+                className="hero-video__video"
+                src="/nina_hero_video.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                aria-hidden
+              />
+              <div className="hero-video__overlay" aria-hidden />
+            </div>
+            <div className="hero-video__content">
+              <h1 className="hero-video__title">
+                <span className="hero-video__title-line">Nina</span>
+                <span className="hero-video__title-line">Simone</span>
+              </h1>
+              <p className="hero-video__subtitle">
+                Not sure what to add here yet, but here is the demo.
+              </p>
+              <div className="hero-video__actions">
+                <a href="#section-3" className="hero-video__btn hero-video__btn--primary">
+                  EXPLORE STORIES
+                </a>
+                <a href="#section-2" className="hero-video__btn hero-video__btn--outline">
+                  LEARN MORE
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          ref={section2Ref}
+          id="section-2"
+          className={`section section--white section--intro ${introImagesVisible ? 'section--intro--in-view' : ''}`}
+          aria-label="Section 2"
+        >
           <img
             src="/nina_no_mic.webp"
             alt=""
@@ -83,19 +134,18 @@ export default function App() {
             className="section--intro__mic-img"
           />
         </section>
-        <section className="section section--gradient" aria-label="Section 4" />
-        <SectionFive />
+        <SectionFive id="section-3" sectionLabel="Section 3" blockClass="section--three" />
         <SectionFive
           imageSrc="/nina_nice_dress.JPG"
           alt="Nina Simone performing"
-          sectionLabel="Section 6"
-          blockClass="section--six"
+          sectionLabel="Section 4"
+          blockClass="section--four"
         />
         <SectionFive
           imageSrc="/nina_piano_2_b-w.JPG"
           alt="Nina Simone at the piano"
-          sectionLabel="Section 7"
-          blockClass="section--seven"
+          sectionLabel="Section 5"
+          blockClass="section--five"
         />
         <SectionEight />
         <SectionNine />

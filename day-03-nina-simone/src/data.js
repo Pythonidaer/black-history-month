@@ -31,5 +31,25 @@ export const figure = {
       src: '/Nina Simone - Feeling Good (Audio).mp3',
       albumArtUrl: '/nina_black_pink.jpg',
     },
+    {
+      artist: 'Nina Simone',
+      src: '/Nina Simone - Just Like a Woman (Audio).mp3',
+      albumArtUrl: '/nina_black_pink.jpg',
+    },
+    {
+      artist: 'Nina Simone',
+      src: '/Nina Simone - Mississippi Goddam (Audio).mp3',
+      albumArtUrl: '/nina_black_pink.jpg',
+    },
+    {
+      artist: 'Nina Simone',
+      src: '/Nina Simone - To Be Young, Gifted and Black (Audio).mp3',
+      albumArtUrl: '/nina_black_pink.jpg',
+    },
+    {
+      artist: 'Nina Simone',
+      src: '/Nina Simone - Why (The King of Love Is Dead) (Audio).mp3',
+      albumArtUrl: '/nina_black_pink.jpg',
+    },
   ],
 }

@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from 'react'
 
-const COUNTDOWN_START = 5
+const COUNTDOWN_START = 3
 const SECONDS_PER_NUMBER = 1
 const FADE_OUT_DURATION_MS = 500
 
 /**
- * Full-viewport cinema countdown (5, 4, 3, 2, 1) with quadrant background,
+ * Full-viewport cinema countdown (3, 2, 1) with quadrant background,
  * concentric circles, shrinking clock-hand arc, and black numeral. Calls onComplete when done.
  */
 export default function CinemaCountdown({ onComplete }) {
@@ -21,13 +21,11 @@ export default function CinemaCountdown({ onComplete }) {
       const t = setTimeout(() => setNumber((n) => n - 1), SECONDS_PER_NUMBER * 1000)
       return () => clearTimeout(t)
     }
-    // Hold on 1, then fade out and notify
+    // Hold on 1, then fade out; notify immediately so main content (black hero) is visible underneath
     const hold = setTimeout(() => {
       setFadeOut(true)
-      const done = setTimeout(() => {
-        setVisible(false)
-        onComplete?.()
-      }, FADE_OUT_DURATION_MS)
+      onComplete?.()
+      const done = setTimeout(() => setVisible(false), FADE_OUT_DURATION_MS)
       return () => clearTimeout(done)
     }, SECONDS_PER_NUMBER * 1000)
     return () => clearTimeout(hold)
