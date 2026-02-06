@@ -59,18 +59,18 @@ export default function CinemaCountdown({ onComplete }) {
       aria-live="polite"
       aria-label={`Countdown ${number}`}
     >
-      <div
-        className="cinema-countdown__quadrants"
-        aria-hidden="true"
-        style={{
-          background: `conic-gradient(from 0deg, #E5E5E5 0deg, #E5E5E5 ${360 - arcAngle}deg, #818181 ${360 - arcAngle}deg, #818181 360deg)`,
-        }}
-      />
-      <div className="cinema-countdown__cross" aria-hidden="true" />
-      <div className="cinema-countdown__center">
-        <div className="cinema-countdown__circles">
-          <span className="cinema-countdown__number">{number}</span>
-        </div>
+      <div className="cinema-countdown__content" aria-hidden="true">
+        <div
+          className="cinema-countdown__quadrants"
+          style={{
+            background: `conic-gradient(from 0deg, #E5E5E5 0deg, #E5E5E5 ${360 - arcAngle}deg, #818181 ${360 - arcAngle}deg, #818181 360deg)`,
+          }}
+        />
+        <div
+          className="cinema-countdown__hand"
+          style={{ transform: `rotate(${270 - arcAngle}deg)` }}
+        />
+        <div className="cinema-countdown__cross" />
       </div>
       <video
         className="cinema-countdown__grain"
@@ -81,6 +81,13 @@ export default function CinemaCountdown({ onComplete }) {
         playsInline
         aria-hidden
       />
+      <div className="cinema-countdown__content cinema-countdown__content--overlay" aria-hidden="true">
+        <div className="cinema-countdown__center">
+          <div className="cinema-countdown__circles">
+            <span className="cinema-countdown__number">{number}</span>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

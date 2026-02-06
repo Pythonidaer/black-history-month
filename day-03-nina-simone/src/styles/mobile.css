@@ -5,12 +5,13 @@
     scroll-snap-type: none;
   }
 
-  /* Sections: content height (no 100vh cap), no scroll snap on mobile */
+  /* Sections: content height (no 100vh cap), no scroll snap on mobile, vertical padding */
   .section {
     scroll-snap-align: none;
     scroll-snap-stop: normal;
     min-height: auto;
     height: auto;
+    padding: 1rem 0;
   }
 
   .section--one {
@@ -18,6 +19,29 @@
     min-height: 100dvh;
     height: 100vh;
     height: 100dvh;
+    padding: 0;
+  }
+
+  /* Section 9: min-height 70vh, text center and fuller width */
+  .section--nine {
+    min-height: 70vh;
+    min-height: 70dvh;
+  }
+
+  .section--nine__left {
+    display: block;
+    left: 50%;
+    right: auto;
+    width: 92%;
+    max-width: none;
+    transform: translateX(-50%);
+    padding: clamp(1.5rem, 4vw, 2.5rem) 1rem;
+    text-align: center;
+  }
+
+  .section--nine__left-resources {
+    padding-left: 0;
+    list-style-position: inside;
   }
 
   /* Music player: full-width bottom bar, no radius, compact */
@@ -129,5 +153,9 @@
 
   .section--eight__text-box {
     padding: clamp(0.75rem, 1.5vw, 1.25rem);
+  }
+
+  .site-footer__credit {
+    padding: 0 1.5rem 2rem;
   }
 }

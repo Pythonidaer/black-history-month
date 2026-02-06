@@ -26,33 +26,127 @@
   z-index: 2;
 }
 
+/* Wrapper for countdown elements that jitter (grain stays still); extend past edges to avoid gap; below grain so grain is visible */
+.cinema-countdown__content {
+  position: absolute;
+  inset: -5px;
+  z-index: 1;
+  animation: cinema-countdown-jitter 2.2s ease-in-out infinite;
+}
+
+/* Rings + number in a second jitter layer above the grain so they stay white and still jitter */
+.cinema-countdown__content--overlay {
+  z-index: 3;
+}
+
+/* Erratic: 1, 2-3, pause, 1, 2-3, pause */
+@keyframes cinema-countdown-jitter {
+  0% {
+    transform: translateY(0);
+  }
+  4% {
+    transform: translateY(-1.5px);
+  }
+  8% {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(1.5px);
+  }
+  12% {
+    transform: translateY(0);
+  }
+  14% {
+    transform: translateY(-1px);
+  }
+  16% {
+    transform: translateY(0);
+  }
+  16%,
+  40% {
+    transform: translateY(0);
+  }
+  44% {
+    transform: translateY(-1.5px);
+  }
+  48% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(1.5px);
+  }
+  52% {
+    transform: translateY(0);
+  }
+  54% {
+    transform: translateY(-1px);
+  }
+  56% {
+    transform: translateY(0);
+  }
+  56%,
+  100% {
+    transform: translateY(0);
+  }
+}
+
 .cinema-countdown__quadrants {
   position: absolute;
   inset: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
+}
+
+/* Thick rotating clock hand (leading edge of the sweep) */
+.cinema-countdown__hand {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 70vmax;
+  height: 7px;
+  margin-left: 0;
+  margin-top: -4.5px;
+  background: #222;
+  pointer-events: none;
+  z-index: 1;
+  transform-origin: left center;
 }
 
 .cinema-countdown__cross {
   position: absolute;
   inset: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-image:
-    linear-gradient(#000 1px, transparent 1px),
-    linear-gradient(90deg, #000 1px, transparent 1px);
-  background-size: 100% 2px, 2px 100%;
+    linear-gradient(#000 2px, transparent 2px),
+    linear-gradient(90deg, #000 2px, transparent 2px);
+  background-size: 100% 4px, 4px 100%;
   background-position: center center;
   background-repeat: no-repeat;
   pointer-events: none;
 }
 
+/* Thicker vertical line: top half only (separate overlay) */
+.cinema-countdown__cross::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 5px;
+  height: 50%;
+  transform: translateX(-50%);
+  background: #000;
+  pointer-events: none;
+}
+
 .cinema-countdown__center {
-  position: relative;
+  position: absolute;
+  inset: 0;
   z-index: 3;
   display: flex;
   align-items: center;
   justify-content: center;
+  pointer-events: none;
 }
 
 .cinema-countdown__circles {
@@ -78,8 +172,10 @@
 
 .cinema-countdown__number {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: min(35vmin, 160px);
+  font-size: min(40vmin, 190px);
   font-weight: 400;
   color: #000;
   line-height: 1;
+  /* Nudge so numerals sit optically centered in the circle (font metrics) */
+  transform: translate(-0.02em, 0.03em);
 }

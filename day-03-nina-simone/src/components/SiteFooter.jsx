@@ -17,12 +17,12 @@ export function SiteFooter() {
       <p className="site-footer__design-credit">
         Design influenced by{' '}
         <a
-          href="https://google.com"
+          href="https://www.youtube.com/shorts/hUK1vHocKN8"
           target="_blank"
           rel="noopener noreferrer"
           className="site-footer__credit-link"
         >
-          Nobody Yet
+          Old Cinema Countdowns
         </a>
       </p>
       <p className="site-footer__credit">
