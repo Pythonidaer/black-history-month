@@ -1,0 +1,55 @@
+/* Base: reset, app shell, main content, section layout */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Lock scroll while cinema countdown is active */
+html.cinema-countdown-active,
+body.cinema-countdown-active {
+  overflow: hidden;
+  height: 100%;
+  touch-action: none;
+}
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* ----- Main content: hidden until countdown done, then fade in ----- */
+.main-content {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+  min-height: 100vh;
+}
+
+.main-content--visible {
+  opacity: 1;
+}
+
+/* ----- Sections: full viewport ----- */
+.section {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.section--white {
+  background: #fff;
+}

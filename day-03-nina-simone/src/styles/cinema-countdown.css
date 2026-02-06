@@ -1,0 +1,85 @@
+/* ----- Cinema countdown (full viewport, appears first) ----- */
+
+.cinema-countdown {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease-out;
+}
+
+.cinema-countdown--fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.cinema-countdown__grain {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.cinema-countdown__quadrants {
+  position: absolute;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.cinema-countdown__cross {
+  position: absolute;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image:
+    linear-gradient(#000 1px, transparent 1px),
+    linear-gradient(90deg, #000 1px, transparent 1px);
+  background-size: 100% 2px, 2px 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+.cinema-countdown__center {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cinema-countdown__circles {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(70vmin, 320px);
+  height: min(70vmin, 320px);
+  border: 4px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.4);
+}
+
+.cinema-countdown__circles::before {
+  content: '';
+  position: absolute;
+  inset: 14%;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3);
+}
+
+.cinema-countdown__number {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: min(35vmin, 160px);
+  font-weight: 400;
+  color: #000;
+  line-height: 1;
+}

@@ -1,0 +1,243 @@
+/* ----- Section 3–6: palette image ----- */
+.section--three,
+.section--four,
+.section--five,
+.section--six {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.section--three__gradient-overlay,
+.section--four__gradient-overlay,
+.section--five__gradient-overlay,
+.section--six__gradient-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  transition: opacity 0.8s ease-out;
+}
+
+.section--three__content,
+.section--four__content,
+.section--five__content,
+.section--six__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  width: 100%;
+}
+
+.section--three__img-wrap,
+.section--four__img-wrap,
+.section--five__img-wrap,
+.section--six__img-wrap {
+  border: 8px solid #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+.section--three__img,
+.section--four__img,
+.section--five__img,
+.section--six__img {
+  display: block;
+  max-width: min(85vw, 560px);
+  max-height: 85vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ----- Section 6: image left, text box right (fades in) ----- */
+.section--six .section--six__content {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section--six .section--six__img-wrap {
+  flex-shrink: 0;
+}
+
+.section--six .section--six__img {
+  max-width: min(45vw, 420px);
+  max-height: 80vh;
+}
+
+.section--six__text-box {
+  background: #fff;
+  color: #1a0f1c;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  max-width: 480px;
+  opacity: 0;
+  transform: translateX(1rem);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.section--six__text-box--visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.section--six__text-box-title {
+  margin: 0 0 0.75rem;
+  font-family: 'Madimi One', sans-serif;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.section--six__text-box-body {
+  margin: 0;
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+  line-height: 1.6;
+}
+
+@media (max-width: 720px) {
+  .section--six .section--six__content {
+    flex-direction: column;
+  }
+
+  .section--six .section--six__img {
+    max-width: min(85vw, 360px);
+  }
+}
+
+/* ----- Section 6: image left, What She Built Through Music right (bio layout) ----- */
+.section--six-bio {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: clamp(1rem, 2.5vw, 1.75rem);
+  height: 100vh;
+  height: 100dvh;
+  min-height: 0;
+  overflow: hidden;
+  padding-left: clamp(2.5rem, 6vw, 4rem);
+  padding-right: clamp(2.5rem, 6vw, 4rem);
+  box-sizing: border-box;
+}
+
+.section--six-bio__gradient-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  transition: opacity 0.8s ease-out;
+}
+
+.section--six-bio__media {
+  position: relative;
+  z-index: 1;
+  flex: 0 1 35%;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: clamp(1.5rem, 3vw, 2rem) 0;
+}
+
+.section--six-bio__img-wrap {
+  border: 8px solid #d4af37;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+.section--six-bio__img {
+  display: block;
+  max-height: 72vh;
+  max-width: min(36vw, 340px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+}
+
+.section--six-bio__right {
+  position: relative;
+  z-index: 1;
+  flex: 1 1 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(2rem, 5vw, 3.5rem) 0;
+  max-width: 65%;
+}
+
+.section--six-bio__block {
+  background: #fff;
+  color: #1a0f1c;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1.5rem;
+  max-width: 100%;
+}
+
+.section--six-bio__block:last-child {
+  margin-bottom: 0;
+}
+
+.section--six-bio__block-title {
+  margin: 0 0 0.75rem;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: #1a0f1c;
+  line-height: 1.2;
+}
+
+.section--six-bio__block-body {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.95rem, 1.25vw, 1.05rem);
+  font-weight: 400;
+  line-height: 1.65;
+  color: #1a0f1c;
+}
+
+.section--six-bio__block-body p {
+  margin: 0 0 1rem;
+}
+
+.section--six-bio__block-body p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+  .section--six-bio {
+    flex-direction: column;
+  }
+
+  .section--six-bio__media {
+    flex: 0 0 40vh;
+    min-height: 260px;
+  }
+
+  .section--six-bio__img {
+    max-width: min(75vw, 300px);
+  }
+
+  .section--six-bio__right {
+    max-width: none;
+    padding: 2rem 0 3rem;
+  }
+
+  .section--six-bio__media {
+    padding: 0;
+  }
+}

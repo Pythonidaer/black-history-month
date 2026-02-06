@@ -1,0 +1,109 @@
+/* ----- Section 9: grass background, Nina fades in ----- */
+
+.section--nine {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow: hidden;
+}
+
+.section--nine__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url('/grass_no_nina.PNG');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.section--nine__left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  width: clamp(280px, 32%, 420px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(2rem, 5vw, 3.5rem);
+  padding-right: 0;
+  color: #1a0f1c;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.35);
+}
+
+.section--nine__left-title {
+  margin: 0 0 0.5rem;
+  color: #1a0f1c;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+}
+
+.section--nine__left-lead {
+  margin: 0 0 1rem;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.95rem, 1.25vw, 1.1rem);
+  font-weight: 400;
+  line-height: 1.65;
+  color: #1a0f1c;
+}
+
+.section--nine__left-resources {
+  margin: 0;
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+
+.section--nine__left-resources li {
+  margin-bottom: 0.35rem;
+}
+
+.section--nine__left-resources li:last-child {
+  margin-bottom: 0;
+}
+
+.section--nine__left-link {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.95rem, 1.25vw, 1.1rem);
+  font-weight: 400;
+  line-height: 1.65;
+  color: #1a0f1c;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  transition: color 0.2s;
+}
+
+.section--nine__left-link:hover {
+  color: #3d2b3e;
+}
+
+.section--nine__nina {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%) translateY(12%);
+  opacity: 0;
+  transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.section--nine__nina--visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.section--nine__nina-img {
+  display: block;
+  /* Pair height to section (same as grass background rendered height); 800px viewport ≈ 800px Nina */
+  height: 100vh;
+  height: 100dvh;
+  width: auto;
+  max-width: 100vw;
+  object-fit: contain;
+  object-position: bottom center;
+}

@@ -1,0 +1,171 @@
+/* ----- Section 8: text left (Legacy), image right (nina_older) ----- */
+
+.section--eight-bio {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: clamp(1rem, 2.5vw, 1.75rem);
+  height: 100vh;
+  height: 100dvh;
+  min-height: 0;
+  overflow: hidden;
+  padding-left: clamp(2.5rem, 6vw, 4rem);
+  padding-right: clamp(2.5rem, 6vw, 4rem);
+  box-sizing: border-box;
+}
+
+.section--eight-bio__gradient-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  transition: opacity 0.8s ease-out;
+}
+
+.section--eight-bio__right {
+  position: relative;
+  z-index: 1;
+  flex: 1 1 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(2rem, 5vw, 3.5rem) 0;
+  max-width: 65%;
+}
+
+.section--eight-bio__block {
+  background: #fff;
+  color: #1a0f1c;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1.5rem;
+  max-width: 100%;
+}
+
+.section--eight-bio__block:first-child {
+  margin-bottom: 0;
+}
+
+.section--eight-bio__block:last-child {
+  margin-bottom: 0;
+}
+
+.section--eight-bio__block-title {
+  margin: 0 0 0.75rem;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: #1a0f1c;
+  line-height: 1.2;
+}
+
+.section--eight-bio__block-body {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.95rem, 1.25vw, 1.05rem);
+  font-weight: 400;
+  line-height: 1.65;
+  color: #1a0f1c;
+}
+
+.section--eight-bio__block-body p {
+  margin: 0 0 1rem;
+}
+
+.section--eight-bio__block-body p:last-child {
+  margin-bottom: 0;
+}
+
+.section--eight-bio__media {
+  position: relative;
+  z-index: 1;
+  flex: 0 1 35%;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: clamp(1.5rem, 3vw, 2rem) 0;
+}
+
+.section--eight-bio__img-wrap {
+  border: 8px solid #8b2020;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+.section--eight-bio__img {
+  display: block;
+  max-height: 90vh;
+  max-width: min(45vw, 420px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+}
+
+@media (max-width: 900px) {
+  .section--eight-bio {
+    flex-direction: column;
+  }
+
+  .section--eight-bio__media {
+    flex: 0 0 40vh;
+    min-height: 260px;
+  }
+
+  .section--eight-bio__img {
+    max-width: min(85vw, 360px);
+  }
+
+  .section--eight-bio__right {
+    max-width: none;
+    padding: 2rem 0 3rem;
+  }
+
+  .section--eight-bio__media {
+    padding: 0;
+  }
+}
+
+/* ----- Section 8: long-form bio (stacked text boxes, longer than viewport) ----- */
+.section--eight {
+  min-height: auto;
+  padding: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 4vw, 2.5rem);
+  background: linear-gradient(180deg, #1a0f1c 0%, #2d1b2e 30%, #1a0f1c 100%);
+}
+
+.section--eight__content {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.section--eight__text-box {
+  background: #fff;
+  color: #1a0f1c;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.section--eight__text-box-title {
+  margin: 0 0 0.75rem;
+  font-family: 'Madimi One', sans-serif;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.section--eight__text-box-body {
+  margin: 0 0 1rem;
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+  line-height: 1.6;
+}
+
+.section--eight__text-box-body:last-child {
+  margin-bottom: 0;
+}

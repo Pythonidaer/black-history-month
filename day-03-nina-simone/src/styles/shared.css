@@ -1,0 +1,80 @@
+/* Shared: gold divide, keyframes used by sections */
+
+@keyframes intro-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes intro-slide-in {
+  from {
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* ----- Reusable: cinematic gold divide (prestige / documentary UI) ----- */
+.cinematic-gold-divide {
+  position: relative;
+  width: 100%;
+  height: 3px;
+  margin: 1.5rem 0;
+  flex-shrink: 0;
+}
+
+/* Glow / bloom layer */
+.cinematic-gold-divide::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 20px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(212, 175, 55, 0.08) 10%,
+    rgba(212, 175, 55, 0.25) 30%,
+    rgba(212, 175, 55, 0.45) 50%,
+    rgba(212, 175, 55, 0.25) 70%,
+    rgba(212, 175, 55, 0.08) 90%,
+    transparent 100%
+  );
+  filter: blur(8px);
+  pointer-events: none;
+}
+
+/* Crisp line: bright center, fading transparency toward edges */
+.cinematic-gold-divide::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(212, 175, 55, 0.35) 15%,
+    rgba(212, 175, 55, 0.85) 45%,
+    rgba(224, 190, 80, 1) 50%,
+    rgba(212, 175, 55, 0.85) 55%,
+    rgba(212, 175, 55, 0.35) 85%,
+    transparent 100%
+  );
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+.section--gradient {
+  background: linear-gradient(180deg, #3d2b3e 0%, #2d1b2e 50%, #1a0f1c 100%);
+}

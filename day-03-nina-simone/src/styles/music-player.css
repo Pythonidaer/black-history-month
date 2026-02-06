@@ -1,0 +1,139 @@
+/* ----- Music player — fixed in top-right ----- */
+.music-player-fixed {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 50;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  opacity: 0;
+  transition: opacity 0.4s ease-out;
+  pointer-events: none;
+}
+
+.music-player-fixed--visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ----- Music player — compact bar (Spotify-style) ----- */
+.music-player {
+  --player-text: #fff;
+  --player-text-muted: rgba(255, 255, 255, 0.75);
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  background: #000;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+}
+
+.music-player__row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 0;
+}
+
+.music-player__art-wrap {
+  flex-shrink: 0;
+}
+
+.music-player__art {
+  width: 48px;
+  height: 48px;
+  border-radius: 6px;
+  object-fit: cover;
+  display: block;
+}
+
+.music-player__art--placeholder {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.music-player__info {
+  flex: 1;
+  min-width: 0;
+  padding: 0.15rem 0;
+}
+
+.music-player__title {
+  margin: 0;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--player-text);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.music-player__playlist {
+  margin: 0.2rem 0 0;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: var(--player-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.music-player__progress-wrap {
+  height: 3px;
+  margin-top: 0.5rem;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 2px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.music-player__progress-fill {
+  height: 100%;
+  background: #b08f65;
+  border-radius: 2px;
+  transition: width 0.15s ease;
+}
+
+.music-player__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.music-player__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem;
+  border: none;
+  background: transparent;
+  color: var(--player-text);
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  border-radius: 50%;
+}
+
+.music-player__btn:hover:not(:disabled) {
+  opacity: 0.85;
+}
+
+.music-player__btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.music-player__btn--play {
+  padding: 0.5rem;
+}
+
+.music-player__btn--play:hover:not(:disabled) {
+  opacity: 1;
+}

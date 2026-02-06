@@ -1,0 +1,126 @@
+/* Mobile overrides: must appear last so they are not overwritten by base rules below earlier media queries */
+@media (max-width: 640px) {
+  /* Sections: content height (no 100vh cap) so text doesn’t break; scroll-snap unchanged */
+  .section {
+    min-height: auto;
+    height: auto;
+  }
+
+  .section--one {
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: 100vh;
+    height: 100dvh;
+  }
+
+  /* Music player: full-width bottom bar, no radius, compact */
+  .music-player-fixed {
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    max-width: none;
+    width: 100%;
+    border-radius: 0;
+    box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.35);
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+
+  .music-player-fixed .music-player {
+    max-width: none;
+    border-radius: 0;
+    padding: 0.5rem 0.75rem;
+    box-shadow: none;
+  }
+
+  .music-player-fixed .music-player__row {
+    gap: 0.5rem;
+  }
+
+  .music-player-fixed .music-player__art {
+    width: 40px;
+    height: 40px;
+  }
+
+  .music-player-fixed .music-player__title {
+    font-size: 0.875rem;
+  }
+
+  .music-player-fixed .music-player__playlist {
+    font-size: 0.75rem;
+  }
+
+  .music-player-fixed .music-player__progress-wrap {
+    margin-top: 0.35rem;
+  }
+
+  .section--two__media {
+    display: none;
+  }
+
+  .section--two {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .section--two__right {
+    width: 100%;
+    max-width: 90%;
+    padding: clamp(2rem, 5vw, 3rem);
+    justify-content: center;
+  }
+
+  .section--three-bio__media,
+  .section--four-bio__media,
+  .section--five-bio__media,
+  .section--six-bio__media,
+  .section--seven-bio__media,
+  .section--eight-bio__media {
+    display: none;
+  }
+
+  /* Sections 3–8: half padding on mobile */
+  .section--three-bio,
+  .section--four-bio,
+  .section--five-bio,
+  .section--six-bio,
+  .section--seven-bio,
+  .section--eight-bio {
+    padding-left: clamp(1.25rem, 3vw, 2rem);
+    padding-right: clamp(1.25rem, 3vw, 2rem);
+  }
+
+  .section--three-bio__right,
+  .section--four-bio__right,
+  .section--five-bio__right,
+  .section--six-bio__right,
+  .section--seven-bio__right,
+  .section--eight-bio__right {
+    padding: clamp(1rem, 2.5vw, 1.75rem) 0;
+  }
+
+  .section--three-bio__block,
+  .section--four-bio__block,
+  .section--five-bio__block,
+  .section--six-bio__block,
+  .section--seven-bio__block,
+  .section--eight-bio__block {
+    padding: clamp(1.125rem, 2.25vw, 1.75rem);
+  }
+
+  .section--six .section--six__content {
+    padding: clamp(0.75rem, 1.5vw, 1.25rem);
+  }
+
+  .section--six__text-box {
+    padding: clamp(0.75rem, 1.5vw, 1.25rem);
+  }
+
+  .section--eight {
+    padding: clamp(1.5rem, 3vw, 2.5rem) clamp(0.75rem, 2vw, 1.25rem);
+  }
+
+  .section--eight__text-box {
+    padding: clamp(0.75rem, 1.5vw, 1.25rem);
+  }
+}
