@@ -1,7 +1,14 @@
 import { useState, useCallback, useEffect, useRef } from 'react'
 import CinemaCountdown from './components/CinemaCountdown'
 import MusicPlayer from './components/MusicPlayer'
+import SectionOne from './components/SectionOne'
+import SectionTwo from './components/SectionTwo'
+import SectionThree from './components/SectionThree'
+import SectionFour from './components/SectionFour'
 import SectionFive from './components/SectionFive'
+import SectionImage from './components/SectionImage'
+import SectionSix from './components/SectionSix'
+import SectionSeven from './components/SectionSeven'
 import SectionEight from './components/SectionEight'
 import SectionNine from './components/SectionNine'
 import { SiteFooter } from './components/SiteFooter'
@@ -80,73 +87,13 @@ export default function App() {
             <MusicPlayer tracks={figure.tracks} />
           </div>
         )}
-        <section
-          ref={section1Ref}
-          className="section section--one"
-          aria-label="Section 1"
-        >
-          <div className="hero-video">
-            <div className="hero-video__letterbox">
-              <video
-                className="hero-video__video"
-                src="/nina_hero_video.mp4"
-                autoPlay
-                muted
-                loop
-                playsInline
-                aria-hidden
-              />
-              <div className="hero-video__overlay" aria-hidden />
-            </div>
-            <div className="hero-video__content">
-              <h1 className="hero-video__title">
-                <span className="hero-video__title-line">Nina</span>
-                <span className="hero-video__title-line">Simone</span>
-              </h1>
-              <p className="hero-video__subtitle">
-                Not sure what to add here yet, but here is the demo.
-              </p>
-              <div className="hero-video__actions">
-                <a href="#section-3" className="hero-video__btn hero-video__btn--primary">
-                  EXPLORE STORIES
-                </a>
-                <a href="#section-2" className="hero-video__btn hero-video__btn--outline">
-                  LEARN MORE
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section
-          ref={section2Ref}
-          id="section-2"
-          className={`section section--white section--intro ${introImagesVisible ? 'section--intro--in-view' : ''}`}
-          aria-label="Section 2"
-        >
-          <img
-            src="/nina_no_mic.webp"
-            alt=""
-            className="section--intro__hero-img"
-          />
-          <img
-            src="/mic_no_nina.webp"
-            alt=""
-            className="section--intro__mic-img"
-          />
-        </section>
-        <SectionFive id="section-3" sectionLabel="Section 3" blockClass="section--three" />
-        <SectionFive
-          imageSrc="/nina_nice_dress.JPG"
-          alt="Nina Simone performing"
-          sectionLabel="Section 4"
-          blockClass="section--four"
-        />
-        <SectionFive
-          imageSrc="/nina_piano_2_b-w.JPG"
-          alt="Nina Simone at the piano"
-          sectionLabel="Section 5"
-          blockClass="section--five"
-        />
+        <SectionOne ref={section1Ref} />
+        <SectionTwo ref={section2Ref} inView={introImagesVisible} />
+        <SectionThree />
+        <SectionFour />
+        <SectionFive />
+        <SectionSix />
+        <SectionSeven />
         <SectionEight />
         <SectionNine />
         <SiteFooter />
