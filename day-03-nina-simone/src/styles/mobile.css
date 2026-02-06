@@ -24,8 +24,8 @@
 
   /* Section 9: min-height 70vh, text center and fuller width */
   .section--nine {
-    min-height: 70vh;
-    min-height: 70dvh;
+    min-height: 80vh;
+    min-height: 80dvh;
   }
 
   .section--nine__left {
