@@ -1,7 +1,14 @@
 /* Mobile overrides: must appear last so they are not overwritten by base rules below earlier media queries */
 @media (max-width: 640px) {
-  /* Sections: content height (no 100vh cap) so text doesn’t break; scroll-snap unchanged */
+  /* Disable scroll snap on mobile */
+  html {
+    scroll-snap-type: none;
+  }
+
+  /* Sections: content height (no 100vh cap), no scroll snap on mobile */
   .section {
+    scroll-snap-align: none;
+    scroll-snap-stop: normal;
     min-height: auto;
     height: auto;
   }
