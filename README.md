@@ -5,8 +5,14 @@ One site per day for Black History Month. Built with **Vite** and **React**.
 ## Table of Contents
 
 - [Fred Hampton](https://black-history-month-phi.vercel.app/)
-- [Murderers Row](https://murderers-row.vercel.app/)
+- [Boxing's Black Murderers' Row](https://murderers-row.vercel.app/)
 - [Nina Simone](https://black-history-month-zjty.vercel.app/)
+- [Patrice Lumumba](https://patrice-lumumba.vercel.app/)
+- [Richard Pryor, Moms Mabley, Redd Foxx & Dick Gregory](https://pryor-mabley-foxx-gregory.vercel.app/)
+- [Rebecca Lee Crumpler](https://rebecca-lee-crumpler.vercel.app/)
+- [Charles Richard Drew](https://charles-richard-drew.vercel.app/)
+- [John Brown](https://abolitionist-john-brown.vercel.app/)
+- [Toni Morrison](https://toni-morrison.vercel.app/)
 - …
 
 ## Structure
