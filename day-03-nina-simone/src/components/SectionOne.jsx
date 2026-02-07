@@ -28,7 +28,7 @@ const SectionOne = forwardRef(function SectionOne(_, ref) {
             <span className="hero-video__title-line">Simone</span>
           </h1>
           <p className="hero-video__subtitle">
-          An interactive look at her work, influence, and cultural legacy.
+          An interactive exploration of Nina Simone’s work, influence, and cultural impact.
           </p>
           <div className="hero-video__actions">
             <a href="#section-2" className="hero-video__btn hero-video__btn--primary">
