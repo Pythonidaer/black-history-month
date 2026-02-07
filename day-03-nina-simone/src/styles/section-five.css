@@ -6,10 +6,10 @@
   flex-direction: row;
   align-items: stretch;
   gap: clamp(1rem, 2.5vw, 1.75rem);
-  height: 100vh;
-  height: 100dvh;
-  min-height: 0;
-  overflow: hidden;
+  min-height: 100vh;
+  min-height: 100dvh;
+  height: auto;
+  overflow: visible;
   padding-left: clamp(2.5rem, 6vw, 4rem);
   padding-right: clamp(2.5rem, 6vw, 4rem);
   box-sizing: border-box;
@@ -117,23 +117,26 @@
 @media (max-width: 900px) {
   .section--five-bio {
     flex-direction: column;
+    height: auto;
+    overflow: visible;
   }
 
   .section--five-bio__media {
-    flex: 0 0 40vh;
-    min-height: 260px;
+    order: -1;
+    flex: 0 0 auto;
+    min-height: 200px;
+    padding: 2rem 0 0;
+    justify-content: flex-start;
   }
 
   .section--five-bio__img {
     max-width: min(85vw, 360px);
+    max-height: none;
   }
 
   .section--five-bio__right {
+    order: 0;
     max-width: none;
     padding: 2rem 0 3rem;
-  }
-
-  .section--five-bio__media {
-    padding: 0;
   }
 }

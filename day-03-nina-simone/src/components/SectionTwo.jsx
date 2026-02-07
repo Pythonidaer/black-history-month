@@ -11,16 +11,20 @@ const SectionTwo = forwardRef(function SectionTwo({ inView = false }, ref) {
       aria-label="Section 2"
     >
       <div className="section--two__media">
-        <img
-          src="/nina_no_mic.webp"
-          alt=""
-          className="section--two__hero-img"
-        />
-        <img
-          src="/mic_no_nina.webp"
-          alt=""
-          className="section--two__mic-img"
-        />
+        <div className="section--two__hero-wrap">
+          <img
+            src="/nina_no_mic.webp"
+            alt=""
+            className="section--two__hero-img"
+          />
+        </div>
+        <div className="section--two__mic-wrap">
+          <img
+            src="/mic_no_nina.webp"
+            alt=""
+            className="section--two__mic-img"
+          />
+        </div>
       </div>
       <div className="section--two__right">
         <h2 className="section--two__title">Overview</h2>

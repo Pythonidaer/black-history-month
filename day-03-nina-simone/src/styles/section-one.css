@@ -80,7 +80,7 @@
 .hero-video__title {
   margin: 0 0 0.75rem;
   font-family: 'Madimi One', sans-serif;
-  font-size: clamp(11rem, 9vw, 22rem);
+  font-size: clamp(5.5rem, 9vw, 22rem);
   font-weight: 400;
   line-height: .9;
   letter-spacing: 0;
@@ -114,7 +114,7 @@
 
 .hero-video__btn {
   display: flex;
-  align-self: center;
+  align-self: flex-start;
   justify-content: center;
   align-items: center;
   padding: 0.75rem 1.5rem;
@@ -142,6 +142,46 @@
   background: #a02828;
 }
 
+/* Tablet and below: center text and buttons so layout holds at ~757px and narrower */
+@media (max-width: 1024px) {
+  .hero-video__content {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-video__content > * {
+    width: 92%;
+    max-width: 28rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .hero-video__title {
+    font-size: clamp(4rem, 12vw, 8rem);
+    text-align: start;
+  }
+
+  .hero-video__subtitle {
+    text-align: start;
+  }
+
+  .hero-video__actions {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .hero-video__btn {
+    container-type: inline-size;
+    width: 100%;
+    display: flex;
+    min-height: 3rem;
+    padding: 1rem 1.5rem;
+    font-size: clamp(0.75rem, 9cqi, 1.25rem);
+    white-space: nowrap;
+  }
+}
+
 @media (max-width: 640px) {
   .hero-video__content {
     align-items: center;
@@ -152,10 +192,16 @@
     max-width: 90%;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
   }
 
   .hero-video__title {
     font-size: clamp(3.5rem, 20vw, 5.25rem);
+    text-align: start;
+  }
+
+  .hero-video__subtitle {
+    text-align: start;
   }
 
   .hero-video__actions {
@@ -165,5 +211,8 @@
 
   .hero-video__btn {
     width: 100%;
+    min-width: 0;
+    min-height: 3rem;
+    padding: 1rem 1.5rem;
   }
 }

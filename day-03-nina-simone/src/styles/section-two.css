@@ -28,12 +28,20 @@
   position: relative;
   flex: 0 1 35%;
   min-width: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  padding-left: 2rem;
+}
+
+.section--two__hero-wrap {
+  flex-shrink: 0;
+  max-height: 90vh;
+  line-height: 0;
 }
 
 .section--two__hero-img {
-  position: absolute;
-  bottom: 0;
-  left: 2rem;
+  display: block;
   max-height: 90vh;
   width: auto;
   height: auto;
@@ -42,10 +50,15 @@
   opacity: 0;
 }
 
+.section--two__mic-wrap {
+  flex-shrink: 0;
+  margin-left: -1.5rem;
+  max-height: 90vh;
+  line-height: 0;
+}
+
 .section--two__mic-img {
-  position: absolute;
-  bottom: 0;
-  left: 80%;
+  display: block;
   max-height: 90vh;
   width: auto;
   height: auto;
@@ -60,8 +73,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: clamp(2rem, 5vw, 3.5rem);
-  padding-right: clamp(8rem, 18vw, 12rem);
+  padding: clamp(2rem, 5vw, 3.5rem) clamp(5rem, 12vw, 9rem) clamp(2rem, 5vw, 3.5rem) clamp(3.5rem, 8vw, 5.5rem);
   max-width: 65%;
 }
 
@@ -117,18 +129,69 @@
   font-style: italic;
 }
 
-@media (max-width: 900px) {
-  .section--two {
-    flex-direction: column;
+/* Mid viewport: shrink images so they don’t overlap the text (901px–1261px) */
+@media (min-width: 901px) and (max-width: 1261px) {
+  .section--two__media {
+    flex: 0 0 auto;
+    width: 18%;
+    max-width: 200px;
   }
 
-  .section--two__media {
-    flex: 0 0 45vh;
-    min-height: 280px;
+  .section--two__hero-wrap,
+  .section--two__mic-wrap {
+    max-height: 48vh;
+  }
+
+  .section--two__hero-img,
+  .section--two__mic-img {
+    max-height: 48vh;
   }
 
   .section--two__right {
+    flex: 1 1 auto;
+    min-width: 0;
     max-width: none;
-    padding: 2rem 4rem 3rem 1.5rem;
+    padding-left: clamp(3rem, 6vw, 4rem);
+    padding-right: clamp(2rem, 4vw, 3rem);
+  }
+
+  /* Quote block: spacing from mic (left), spacing from right edge, centered quote */
+  .section--two__body-wrap + .cinematic-gold-divide,
+  .section--two__quote,
+  .section--two__quote + .cinematic-gold-divide {
+    margin-left: min(24vw, 16rem);
+    margin-right: clamp(2rem, 4vw, 3rem);
+    width: calc(100% - min(24vw, 16rem) - clamp(2rem, 4vw, 3rem));
+    box-sizing: border-box;
+  }
+
+  .section--two__quote {
+    text-align: center;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .section--two {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .section--two__media {
+    display: none;
+  }
+
+  .section--two__right {
+    width: 100%;
+    max-width: 90%;
+    padding: clamp(2rem, 5vw, 3rem);
+    justify-content: center;
+  }
+
+  .section--two__title,
+  .section--two__body-wrap,
+  .section--two__body {
+    text-align: left;
   }
 }

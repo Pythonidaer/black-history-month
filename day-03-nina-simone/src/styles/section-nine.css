@@ -107,3 +107,73 @@
   object-fit: contain;
   object-position: bottom center;
 }
+
+/* Tablet and below (incl. iPad Pro portrait 1024px): stack Thank You block centered above the image */
+@media (max-width: 1024px) {
+  .section--nine {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: auto;
+  }
+
+  .section--nine__left {
+    position: static;
+    width: 92%;
+    max-width: 32rem;
+    transform: none;
+    padding: clamp(2rem, 5vw, 3rem) 1rem;
+    text-align: center;
+  }
+
+  .section--nine__left-resources {
+    list-style-position: inside;
+    padding-left: 0;
+  }
+
+  .section--nine__nina {
+    position: static;
+    transform: none;
+    margin-top: auto;
+  }
+
+  .section--nine__nina--visible {
+    transform: none;
+  }
+
+  .section--nine__nina-img {
+    height: auto;
+    max-height: 60vh;
+    max-height: 60dvh;
+  }
+}
+
+/* Mobile: Nina image flush to bottom of section, text block centered, list left-aligned and smaller */
+@media (max-width: 640px) {
+  .section--nine__left {
+    width: 92%;
+    max-width: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section--nine__left-resources {
+    text-align: left;
+    list-style-position: outside;
+    padding-left: 1.25rem;
+  }
+
+  .section--nine__left-link {
+    font-size: 0.875rem;
+  }
+
+  .section--nine__nina {
+    align-self: stretch;
+    margin-bottom: 0;
+  }
+
+  .section--nine__nina-img {
+    object-position: bottom center;
+    width: 100%;
+  }
+}

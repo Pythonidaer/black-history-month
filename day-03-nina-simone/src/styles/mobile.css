@@ -22,21 +22,17 @@
     padding: 0;
   }
 
-  /* Section 9: min-height 70vh, text center and fuller width */
+  /* Section 9: keep stacked layout from 1024px; no extra padding so Nina sits at bottom */
   .section--nine {
     min-height: 80vh;
     min-height: 80dvh;
+    padding-bottom: 0;
   }
 
   .section--nine__left {
-    display: block;
-    left: 50%;
-    right: auto;
-    width: 92%;
-    max-width: none;
-    transform: translateX(-50%);
+    margin-left: auto;
+    margin-right: auto;
     padding: clamp(1.5rem, 4vw, 2.5rem) 1rem;
-    text-align: center;
   }
 
   .section--nine__left-resources {
