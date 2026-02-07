@@ -11,6 +11,21 @@
     "build:main": "cd site-main && npm run build",
     "build:day1": "cd day-01-fred-hampton && npm run build",
     "build:day2": "cd day-02-murderers-row && npm run build",
-    "build:day3": "cd day-03-nina-simone && npm run build"
+    "build:day3": "cd day-03-nina-simone && npm run build",
+    "dev:day4": "cd day-04-patrice-lumumba && npm run dev",
+    "dev:day5": "cd day-05-pryor-mabley-foxx-gregory && npm run dev",
+    "dev:day6": "cd day-06-rebecca-lee-crumpler && npm run dev",
+    "dev:day7": "cd day-07-charles-richard-drew && npm run dev",
+    "dev:day8": "cd day-08-john-brown && npm run dev",
+    "dev:day9": "cd day-09-toni-morrison && npm run dev",
+    "dev:day10": "cd day-10-marsha-p-johnson && npm run dev",
+    "build:day4": "cd day-04-patrice-lumumba && npm run build",
+    "build:day5": "cd day-05-pryor-mabley-foxx-gregory && npm run build",
+    "build:day6": "cd day-06-rebecca-lee-crumpler && npm run build",
+    "build:day7": "cd day-07-charles-richard-drew && npm run build",
+    "build:day8": "cd day-08-john-brown && npm run build",
+    "build:day9": "cd day-09-toni-morrison && npm run build",
+    "build:day10": "cd day-10-marsha-p-johnson && npm run build",
+    "install:all": "npm install && cd site-main && npm install && cd ../day-01-fred-hampton && npm install && cd ../day-02-murderers-row && npm install && cd ../day-03-nina-simone && npm install && cd ../day-04-patrice-lumumba && npm install && cd ../day-05-pryor-mabley-foxx-gregory && npm install && cd ../day-06-rebecca-lee-crumpler && npm install && cd ../day-07-charles-richard-drew && npm install && cd ../day-08-john-brown && npm install && cd ../day-09-toni-morrison && npm install && cd ../day-10-marsha-p-johnson && npm install"
   }
 }

@@ -1,0 +1,106 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #0f0f0f;
+  --text: #f0f0f0;
+  --accent: #c9a227;
+  --muted: #888;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.app {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.hero h1 {
+  font-size: 2.25rem;
+  margin: 0 0 0.5rem;
+}
+
+.tagline {
+  font-size: 1.125rem;
+  color: var(--accent);
+  margin: 0 0 0.25rem;
+}
+
+.dates {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.bio {
+  margin-bottom: 2rem;
+}
+
+.bio p {
+  margin: 0;
+}
+
+section h2 {
+  font-size: 1.25rem;
+  margin: 0 0 1rem;
+  color: var(--accent);
+}
+
+.quotes ul,
+.timeline ul,
+.links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.quotes li {
+  margin-bottom: 1.5rem;
+}
+
+blockquote {
+  margin: 0 0 0.25rem;
+  font-style: italic;
+}
+
+cite {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.timeline li {
+  margin-bottom: 0.75rem;
+}
+
+.timeline strong {
+  display: inline-block;
+  min-width: 4ch;
+}
+
+.links a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+.links li {
+  margin-bottom: 0.5rem;
+}
